@@ -1,0 +1,14 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Ble device discovery</h1>
+        <script>
+            let url = 'http://172.18.0.2:5000/static/devices.json';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(out =>
+                console.log('Checkout this JSON! ', out))
+        </script>
+    </body>
+</html>
