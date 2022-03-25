@@ -3,8 +3,6 @@ from flask import Flask
 from flask import render_template
 from flask import url_for
 
-#modules.emprunt.cacheItems()
-
 app = Flask("inventaire")
 app.run(host='0.0.0.0',debug=True)
 
