@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import url_for
 
-app = Flask("inventaire")
+app = Flask("ble_discovery")
 app.run(host='0.0.0.0',debug=True)
 
 @app.route('/', methods=['GET', 'POST'])
