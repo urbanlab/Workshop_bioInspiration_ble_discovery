@@ -5,7 +5,7 @@ ble_devices = {}
 ble_device = {}
 deviceId = 0
 scanner = Scanner()
-jsonDevices = "devices.json"
+jsonDevices = "static/devices.json"
 
 #Create a Json with all the devices during one scan (erases the previous Json)
 while True : 
