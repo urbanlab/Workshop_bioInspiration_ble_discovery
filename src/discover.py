@@ -33,6 +33,15 @@ while True :
 
         #Write each the Json line and replace ' with " for correct formatting
         ble_device = str({"adress": device.addr, "signal_strengh": device.rssi }).replace("'", '"')
+        #print(device.getScanData())
+        moreData = device.getScanData()
+        getDescription(adtype)
+        try :
+            print(moreData)
+            #print(moreData[2])
+            
+        except :
+            print("null")
         f.write(ble_device)
 
         #Add the correct fomating for each line ending (different for te last line)
