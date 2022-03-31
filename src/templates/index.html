@@ -1,14 +1,80 @@
-<html>
-    <head></head>
-    <body>
-        <h1>Ble device discovery</h1>
-        <script>
-            let url = 'http://172.18.0.2:5000/static/devices.json';
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link async rel="stylesheet" href="http://192.168.71.193:5001/static/sketch.css">
+  <title>Main_Screen</title>
+  <script src="http://192.168.71.193:5001/static/jquery.js"></script>
+</head>
 
-            fetch(url)
-            .then(res => res.json())
-            .then(out =>
-                console.log('Checkout this JSON! ', out))
-        </script>
-    </body>
+<body>
+
+  <ul>
+    <li class="Video" id="video-1">
+      <video disablepictureinpicture autoplay loop id="video-background" muted>
+        <source src="http://192.168.71.193:5001/static/1.mp4" type="video/mp4">
+      </video>
+    </li>
+    <li class="Video" id="video-2">
+      <video disablepictureinpicture autoplay loop id="video-background" muted>
+        <source src="http://192.168.71.193:5001/static/2.mp4" type="video/mp4">
+      </video>
+    </li>
+    <li class="Video" id="video-3">
+      <video disablepictureinpicture autoplay loop id="video-background" muted>
+        <source src="http://192.168.71.193:5001/static/3.mp4" type="video/mp4">
+      </video>
+    </li>
+  </ul>
+
+<script type="text/javascript">
+let people = 0;
+let truepeople = 0; //recupe data
+
+
+url = "http://192.168.71.193:5001/getfaces"
+
+// Get json of people numbe²
+
+
+setInterval(function(){
+
+      //var r = parseInt((Math.random()-0.5)*10);
+
+      $.get( url, function( data ) {
+      people = JSON.parse(data).faces
+      
+      });
+      //people = getPeopleNb();
+      console.log(people);
+
+      if ( people >= 0 && people < 1 ){
+        console.log("ecran 1")
+        showVideo('1');
+      }
+
+
+      if ( people >= 1 && people < 2 ){
+        showVideo('2');
+        console.log("ecran 2")
+
+      }
+
+
+      if ( people >= 3 ){
+        showVideo('3');
+        console.log("ecran 3")
+
+      }
+
+console.log(people);
+},1000);
+
+function showVideo(videoId){
+  $('.Video').css('display', 'none');
+  $('#video-'+videoId).css('display', 'block');
+}
+</script>
+
+</body>
 </html>

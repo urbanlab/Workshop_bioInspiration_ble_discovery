@@ -1,0 +1,64 @@
+/* INIT */
+html, body {
+  position : relative;
+  width: 2160px;
+  height: 3840px;
+  margin : 0;
+  padding : 0;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+#bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -5;
+}
+
+ul, menu, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* VIDEO */
+.Video video {
+  position: fixed;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  min-width: 70%;
+  min-height: 70%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%,-50%);
+}
+
+/* MENU */
+.Menu {
+  position: fixed;
+  z-index: 2;
+  top: 20%;
+  right: 10%;
+  color: white;
+}
+
+.Menu-item {
+  width: 200px;
+  font-size: 1.1em;
+  letter-spacing: 0.5em;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  transition: 0.15s;
+  opacity: 0.7;
+  text-transform : uppercase;
+  text-align: right;
+}
+
+.Menu-item:hover {
+  opacity:1;
+  background-color: white;
+  color: black;
+}

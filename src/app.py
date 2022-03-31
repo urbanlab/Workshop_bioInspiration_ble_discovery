@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import url_for
 import json
+import os
 
 app = Flask("ble_discovery")
 app.run(host='0.0.0.0',debug=True)
@@ -18,7 +19,11 @@ def index():
 #http://172.18.0.2:5000/static/devices.json
 @app.route('/devices')
 def send():
-    return "<a href=%s>file</a>" % url_for('static', filename='devices.json')
+    # if statusFilePath file is empty return an empty json
+    if os.stat(statusFilePath).st_size == 0:
+        return []
+    else :
+        return "<a href=%s>file</a>" % url_for('static', filename='devices.json')
 
 @app.route('/getfaces')
 def getFaces():
