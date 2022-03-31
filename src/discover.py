@@ -44,28 +44,6 @@ while True :
             # Write each device in the Json
             #f.write(str(devicesToSort))
     f.close()
+    #Clear the array for the next scan
+    devicesToSort = []
 
-
-    exit()
-
-    #Print the devices sorted by signal strenght
-    for device in devicesToSort:
-        with open(jsonDevices,'w') as f: 
-            # Write each device in the Json
-            f.write(str(device) + ",\n")
-            # If the device is not the last one, write a comma
-            if deviceId != len(devicesToSort):
-                f.write(",")
-                # Write a new line
-                f.write("\n")
-            else :
-                f.write("]")
-            f.close()
-        
-
-        
-    #Erases the content of the Json
-    print("#######################################################")
-    with open(jsonDevices,'w') as f: 
-        pass
-    f.close()
