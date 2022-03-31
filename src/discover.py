@@ -22,6 +22,21 @@ while True :
         #Count the number of iterations
         deviceId = deviceId + 1
 
+        # get the bluetooth all the devices names
+        # get all Value text from the device
+        
+        # getValueText from 0 to 11 and print them below if value is not None
+
+        for i in range(0,100):
+            try:
+                value = device.getValueText(i)
+                if value is not None:
+                    print(value)
+            except:
+                pass
+        
+      
+
         #Write each the Json line and replace ' with " for correct formatting
         ble_device = {"adress": device.addr, "signal_strengh": device.rssi }
         #print(device.getScanData())
@@ -30,7 +45,7 @@ while True :
         devicesToSort.append(ble_device)
         
         #Print to demonstrate you're a hacker
-        print(ble_device)
+        #print(ble_device)
 
 
 
