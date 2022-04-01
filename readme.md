@@ -1,8 +1,7 @@
 # BLE discovery
 
-**TODO**
-- [ ] the discovery files should run in background and restarted if crashed
-- [ ] request the devices.json file 
+
+
 
 **discovery.py**
 the discovery.py file will request all bluetooth devices around every 3 seconds and write the mac adress and the signal strengh in the devices.json file
